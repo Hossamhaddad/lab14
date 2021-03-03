@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .savedBooks{ max-width: 300px ;max-height: 350px; display: block; background-color: gray;}      
+    #bookP{ max-width: 300px ;max-height: 350px;  }
+    </style>
+</head>
+
+<body>
+    <%- include('../../layout/header')  %>
+    <div class="savedBooks">
+        <% books.forEach(book=>{ %>
+            <form action="/addbook" method="post">
+            <input type="hidden" name="img" value="<%= book.img %>">
+            <img  src=<%= book.img %> alt="">  
+            <input type="hidden" name="title" value="<%= book.title %>">
+        <h3 id="bookH2"><%= book.title %> </h3>
+            <input type="hidden" name="authors" value="<%= book.authors %>">
+        <h4 id="bookH3"><%= book.authors %> </h4> 
+            <input type="hidden" name="description" value="<%= book.description %>">
+        <p id="bookP"><%= book.description %></hp> 
+            <input type="hidden" name="isbn" value="<%= book.isbn %> ">
+            <h1>     <%= book.isbn %>           </h1>  
+            <button type="submit">add to book  </button>
+         
+        </form> 
+        <%   })%>
+
+</html>

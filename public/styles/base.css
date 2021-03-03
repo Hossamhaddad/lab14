@@ -1,0 +1,31 @@
+form {   width: 90%;  margin: auto;  display: flex;  flex-direction: column;  justify-content: center;  align-items: center;}
+
+
+form div{  display: flex;
+      flex-direction: row;  justify-content:
+       space-between;  width: 70%;
+         background-color:#cecdce ;  
+         align-items: center;  
+         margin:20px auto; 
+          padding:13px 25px;  
+          font-size: 1.1em;
+}
+
+form div:nth-child(2){  margin-bottom: 0;
+
+
+}#title , #author{  margin-right: 67%;}
+
+header{
+  background-color: gray;
+}
+ header h1{
+
+text-align: center;
+ }
+ footer{
+   height: 70px;
+   background-color: gray;
+   text-align: center;
+   margin-top: 5px;
+ }

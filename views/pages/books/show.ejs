@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../public/styles/base.css">
+</head>
+<body>
+    <%- include('../../layout/header')  %>
+    
+     <ul>
+   <% booksDetails.forEach(details=>{ %>
+    <li>  <img src="<%=details.image_url %> " alt="">     </li>
+    <li>  <p><%=details.title %> </p></li> 
+    <li>      <p><%=details.authors %> </p>   </li>
+    <li>  <p><%=details.description %> </p> </li>
+    <li>    <p><%=details.isbn %> </p> </li>
+  
+
+     </ul>
+     <button id="update"> TO Update Book </button>
+     <section id="booksUpdate"> 
+     <form action="/books/<%=details.id %>?putMethod=put" method="post">
+     <label for="image_url">Image_url : </label>
+     <input type="text" value="<%=details.image_url %>" name="image_url"> 
+     <br>
+     <label for="title"> Title : </label>
+     <input type="text" value="<%=details.title %>" name="title" > 
+     <br>
+     <label for="authors"> Authors :</label>
+     <input type="text" value="<%=details.authors %>" name="authors">
+     <br>
+     <label for="description">Description :</label>
+     <input type="text" value="<%=details.description %>" name="description">
+     <br>
+     <label for="isbn">Isbn :</label>
+     <input type="text" value="<%=details.isbn %>" name="isbn">
+     <br>
+      <button type="submit"> Update Book </button>
+    </form>
+    </section>
+   
+   <form action="/books/<%=details.id %>?putMethod=delete" method="post">
+  <button type="submit">Delete Book</button>
+
+
+   </form>
+    <% }) %>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="../../../app.js"></script>
+    
+</body>
+</html>
+
+
